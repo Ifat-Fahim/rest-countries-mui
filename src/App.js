@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, CssBaseline, makeStyles } from "@material-ui/core";
+import CountryInfo from "./components/CountryInfo";
+import CountryDataContextProvider from "./contexts/CountryDataContext";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#2193b0",
+        backgroundImage: " linear-gradient(to right, #2193b0, #6dd5ed)",
+    },
+}));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const classes = useStyles();
+    return (
+        <Box className={classes.root}>
+            <CountryDataContextProvider>
+                <CountryInfo />
+                <CssBaseline />
+            </CountryDataContextProvider>
+        </Box>
+    );
 }
 
 export default App;
