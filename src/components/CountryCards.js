@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: "1px 7px 21px -4px rgba(0,0,0,0.5)",
         transform: "scale(0.95)",
         background: "rgba(255, 255, 255)",
+
         "&:hover": {
             transition: "all 500ms ease",
             overflow: "hidden",
@@ -22,9 +23,14 @@ const useStyles = makeStyles((theme) => ({
     cover: {
         height: "200px",
     },
+    btn: {
+        textTransform: "capitalize",
+        fontSize: 16,
+        fontWeight: 400,
+    },
 }));
 
-const CountryCards = ({ name, flag }) => {
+const CountryCards = ({ name, flag, population, capital, region }) => {
     const classes = useStyles();
     return (
         <Card className={classes.root}>
@@ -36,8 +42,22 @@ const CountryCards = ({ name, flag }) => {
                 />
             </CardActionArea>
             <CardContent>
-                <h2>{name}</h2>
-                <Button variant="contained" color="primary">
+                <h2 style={{ margin: 0 }}>{name}</h2>
+
+                <p>
+                    <strong>Population:</strong> {population}
+                </p>
+                <p>
+                    <strong>Region:</strong> {region}{" "}
+                </p>
+                <p>
+                    <strong>Capital:</strong> {capital}
+                </p>
+                <Button
+                    className={classes.btn}
+                    variant="contained"
+                    color="primary"
+                >
                     See Details
                 </Button>
             </CardContent>

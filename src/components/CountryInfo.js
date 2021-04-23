@@ -7,9 +7,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: "grid",
         gap: theme.spacing(2),
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
         width: "90%",
-        margin: "0 auto",
+        margin: "50px auto",
         padding: `${theme.spacing(3)}px 0`,
     },
 }));
@@ -20,8 +20,13 @@ const CountryInfo = () => {
     const classes = useStyles();
     return (
         <Box className={classes.root}>
-            {countryData.map((singleCountry, index) => {
-                return <CountryCards key={index} {...singleCountry} />;
+            {countryData.map((singleCountry) => {
+                return (
+                    <CountryCards
+                        key={singleCountry.alpha3Code}
+                        {...singleCountry}
+                    />
+                );
             })}
         </Box>
     );
