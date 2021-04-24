@@ -2,6 +2,7 @@ import { Box, makeStyles } from "@material-ui/core";
 import { useContext } from "react";
 import { CountryContext } from "../contexts/CountryDataContext";
 import CountryCards from "./CountryCards";
+import Loading from "./Loading";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,9 +16,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CountryInfo = () => {
-    const { countryData } = useContext(CountryContext);
+    const { countryData, loading } = useContext(CountryContext);
 
     const classes = useStyles();
+    if (loading) {
+        return <Loading />;
+    }
+
     return (
         <Box className={classes.root}>
             {countryData.map((singleCountry) => {

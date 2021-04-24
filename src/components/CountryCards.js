@@ -6,6 +6,7 @@ import {
     CardMedia,
     makeStyles,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CountryCards = ({ name, flag, population, capital, region }) => {
     const classes = useStyles();
+    const history = useHistory();
     return (
         <Card className={classes.root}>
             <CardActionArea>
@@ -53,10 +55,14 @@ const CountryCards = ({ name, flag, population, capital, region }) => {
                 <p>
                     <strong>Capital:</strong> {capital}
                 </p>
+
                 <Button
                     className={classes.btn}
                     variant="contained"
                     color="primary"
+                    onClick={() => {
+                        history.push(`/details/${name}`);
+                    }}
                 >
                     See Details
                 </Button>
