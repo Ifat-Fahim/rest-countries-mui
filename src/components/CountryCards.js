@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         boxShadow: "1px 7px 21px -4px rgba(0,0,0,0.5)",
         transform: "scale(0.95)",
-        background: "rgba(255, 255, 255)",
 
         "&:hover": {
             transition: "all 500ms ease",

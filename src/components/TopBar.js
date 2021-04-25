@@ -21,23 +21,22 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const TopBar = () => {
+const TopBar = ({ toggleTheme, setToggleTheme }) => {
     const classes = useStyles();
     const history = useHistory();
+
     return (
         <AppBar color="inherit">
             <Toolbar className={classes.container}>
                 <Typography
-                    onClick={() => {
-                        history.push("/");
-                    }}
+                    onClick={() => history.push("/")}
                     variant="h6"
                     className={classes.typo}
                 >
                     Where in the world?
                 </Typography>
 
-                <IconButton>
+                <IconButton onClick={() => setToggleTheme(!toggleTheme)}>
                     <Brightness3OutlinedIcon />
                     <strong style={{ fontSize: 14 }}>Dark Mode</strong>
                 </IconButton>
