@@ -8,7 +8,7 @@ import {
 import Brightness3OutlinedIcon from "@material-ui/icons/Brightness3Outlined";
 import { useHistory } from "react-router";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
     container: {
         width: "90%",
         maxWidth: "1100px",
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     typo: {
         cursor: "pointer",
     },
-}));
+});
 
 const TopBar = ({ toggleTheme, setToggleTheme }) => {
     const classes = useStyles();
