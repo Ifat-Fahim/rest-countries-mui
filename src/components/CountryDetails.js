@@ -8,10 +8,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: "90%",
         maxWidth: "1100px",
-        margin: `${theme.spacing(10)}px auto`,
+        margin: `${theme.spacing(8)}px auto`,
     },
     card: {
-        width: 600,
         display: "flex",
         borderRadius: "0 0 5 5",
         margin: "0 auto",

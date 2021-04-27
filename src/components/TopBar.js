@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "0 auto",
         display: "flex",
         justifyContent: "space-between",
+        padding: 0,
     },
     typo: {
         cursor: "pointer",
@@ -37,8 +38,17 @@ const TopBar = ({ toggleTheme, setToggleTheme }) => {
                 </Typography>
 
                 <IconButton onClick={() => setToggleTheme(!toggleTheme)}>
-                    <Brightness3OutlinedIcon />
-                    <strong style={{ fontSize: 14 }}>Dark Mode</strong>
+                    {toggleTheme ? (
+                        <>
+                            <Brightness3OutlinedIcon />
+                            <strong style={{ fontSize: 14 }}>Light Mode</strong>
+                        </>
+                    ) : (
+                        <>
+                            <Brightness3OutlinedIcon />
+                            <strong style={{ fontSize: 14 }}>Dark Mode</strong>
+                        </>
+                    )}
                 </IconButton>
             </Toolbar>
         </AppBar>
