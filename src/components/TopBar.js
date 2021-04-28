@@ -6,6 +6,7 @@ import {
     Typography,
 } from "@material-ui/core";
 import Brightness3OutlinedIcon from "@material-ui/icons/Brightness3Outlined";
+import Brightness7Icon from "@material-ui/icons/Brightness7";
 import { useHistory } from "react-router";
 
 const useStyles = makeStyles({
@@ -40,7 +41,7 @@ const TopBar = ({ toggleTheme, setToggleTheme }) => {
                 <IconButton onClick={() => setToggleTheme(!toggleTheme)}>
                     {toggleTheme ? (
                         <>
-                            <Brightness3OutlinedIcon />
+                            <Brightness7Icon />
                             <strong style={{ fontSize: 14 }}>Light Mode</strong>
                         </>
                     ) : (
